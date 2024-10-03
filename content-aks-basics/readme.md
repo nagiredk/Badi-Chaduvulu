@@ -32,18 +32,20 @@ Back in the Cloud Shell, configure kubectl so that commands can be run against t
 az aks get-credentials --name Cluster01 --resource-group $RG
 Deploy the Application
 Create a new deployment manifest file:
-touch deployment.yaml
+
+touch jenkins-deployment.yaml
 Open the editor by clicking the curly braces { }, and open the deployment.yaml file.
 Copy and paste the contents of the deployment.yaml file from the GitHub repo, into the new file.
 Click the menu icon in the top right (...), and click Close Editor. Make sure to save the file.
 Deploy the application:
-kubectl apply -f ./deployment.yaml
+kubectl apply -f ./jenkins-deployment.yaml
+
 In the Azure Portal, under Kubernetes services, open Cluster01.
 In the left-hand menu, click Workloads.
 In the Deployments tab, open the new deployment, and verify that the pods are running.
 Access the Application Externally
 Create a new file named service.yaml:
-touch service.yaml
+touch jenkins-service.yaml
 Open the editor by clicking the curly braces { }, and open the service.yaml file.
 Copy and paste the contents of the service.yaml file from the GitHub repo, into the new file.
 Click the menu icon in the top right (...), and click Close Editor. Make sure to save the file.
