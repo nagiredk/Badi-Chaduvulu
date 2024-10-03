@@ -4,27 +4,28 @@ Introduction
 In this lab, we will work with the Azure Command Line Interface (CLI) to create an AKS cluster. We will then use the kubectl command line utility to deploy an application to that cluster, and then add a kubernetes service, so that the application is accessible over the internet.
 
 Solution
-Log in to the Azure portal using the credentials provided on the lab instructions page.
-
-Create AKS Cluster
-In the Azure Portal, click the Cloud Shell icon (>_) in the upper right.
-Select Bash.
-Click Show advanced settings.
-Set the Cloud Shell region to the same location as the existing resource group
-For Storage account, select Create new and give it a globally unique name (e.g., "cloudshell" with a series of numbers at the end).
+1. Log in to the Azure portal using the credentials provided on the lab instructions page.
+2. Create AKS Cluster
+  In the Azure Portal, click the Cloud Shell icon (>_) in the upper right.
+  Select Bash.
+  Click Show advanced settings.
+  Set the Cloud Shell region to the same location as the existing resource group
+  For Storage account, select Create new and give it a globally unique name (e.g., "cloudshell" with a series of numbers at the end).
 For File share, select Create new and give it a name of "fileshare1".
 Click Create storage.
-Find the resource group name and copy it for later use:
+
+
+3. Find the resource group name and copy it for later use:
 az group list
-Create a variable for the resource group name:
-RG=<RESOURCE_GROUP_NAME>
-Create an AKS cluster:
-az aks create \
- --resource-group $RG \
- --name Cluster01 \
- --node-count 3 \
- --generate-ssh-keys \
- --node-vm-size Standard_B2s \
+  Create a variable for the resource group name:
+  RG=<RESOURCE_GROUP_NAME>
+ Create an AKS cluster:
+  az aks create \
+    --resource-group $RG \
+    --name Cluster01 \
+    --node-count 3 \
+   --generate-ssh-keys \
+   --node-vm-size Standard_B2s \
  --enable-managed-identity
 In the Azure Portal, under All services, navigate to Kubernetes services, and verify that the cluster was deployed successfully.
 Back in the Cloud Shell, configure kubectl so that commands can be run against the cluster:
