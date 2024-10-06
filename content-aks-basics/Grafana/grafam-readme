@@ -1,0 +1,14 @@
+az group list
+GRAFANA_RG=<RESOURCE_GROUP_NAME>
+    cloud [ ~ ]$ GRAFANA_RG=491-28190e07-deploying-and-accessing-an-applicatio
+    cloud [ ~ ]$ echo $GRAFANA_RG
+    491-28190e07-deploying-and-accessing-an-applicatio
+
+
+az aks create \
+ --resource-group $RG \
+ --name Grafana \
+ --node-count 3 \
+ --generate-ssh-keys \
+ --node-vm-size Standard_B2s \
+ --enable-managed-identity
