@@ -16,3 +16,9 @@ az aks create \
 
 
 az aks get-credentials --name GRAFANA --resource-group $GRAFANA_RG
+
+touch deployment.yaml
+kubectl apply -f ./deployment.yaml
+
+touch service.yaml
+kubectl apply -f service.yaml
