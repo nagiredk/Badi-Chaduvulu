@@ -25,3 +25,7 @@ kubectl apply -f service.yaml
 
 #Container name :
 kubectl get pod grafana-98ccd777d-lqnsn -o jsonpath='{.spec.containers[*].name}'
+
+#Access the Grafana Container
+kubectl exec -it grafana-98ccd777d-lqnsn -c grafana -- /bin/sh
+
