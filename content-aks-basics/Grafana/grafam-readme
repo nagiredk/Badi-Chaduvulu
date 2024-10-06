@@ -12,3 +12,7 @@ az aks create \
  --generate-ssh-keys \
  --node-vm-size Standard_B2s \
  --enable-managed-identity
+
+
+
+az aks get-credentials --name GRAFANA --resource-group $GRAFANA_RG
