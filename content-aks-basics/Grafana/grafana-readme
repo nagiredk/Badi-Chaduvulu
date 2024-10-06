@@ -22,3 +22,6 @@ kubectl apply -f ./deployment.yaml
 
 touch service.yaml
 kubectl apply -f service.yaml
+
+#Container name :
+kubectl get pod grafana-98ccd777d-lqnsn -o jsonpath='{.spec.containers[*].name}'
